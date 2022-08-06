@@ -20,9 +20,7 @@ app.use('/api', router)
 
 const port = process.env.PORT || 5000
 
-app.get('/*', (req: Request, res: Response) =>
-  res.sendFile(path.join(__dirname, '..', '..', 'client', 'build', 'index.html')),
-)
+app.get('/*', (req: Request, res: Response) => res.sendFile(path.join(__dirname, 'build', 'index.html')))
 
 app.listen(port, () => {
   console.log(`Server have started on port ${port}`)
