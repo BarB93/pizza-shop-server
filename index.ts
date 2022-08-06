@@ -16,6 +16,7 @@ mongoose
 const app = express()
 app.use(cors())
 app.use(express.json())
+app.use(express.static(path.resolve(__dirname, '..', 'build')))
 app.use('/api', router)
 
 const port = process.env.PORT || 5000
