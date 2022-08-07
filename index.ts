@@ -9,7 +9,9 @@ import router from './routes/index'
 dotenv.config()
 
 mongoose
-  .connect('mongodb+srv://admin:090b514222@cluster0.y2gjitm.mongodb.net/pizza?retryWrites=true&w=majority')
+  .connect(
+    `mongodb+srv://admin:${process.env.DB_PASSWORD}@cluster0.y2gjitm.mongodb.net/pizza?retryWrites=true&w=majority`,
+  )
   .then(() => console.log('Succsess conecting to DB. OK!'))
   .catch((error) => console.log('Error conecting to DB', error))
 
